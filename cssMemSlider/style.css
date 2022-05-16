@@ -1,0 +1,111 @@
+body{
+    background-color: black;
+}
+
+.wrapper{
+    background-color: beige;
+    padding: 5px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;    
+}
+
+.slired-contaoner{
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper{
+    width: 512px;
+    margin: 0 auto;
+}
+
+.slired-contaoner{
+    width: 512px;
+    overflow: hidden;
+}
+
+.sliders{
+    display: flex;
+    width: 2560px;
+    transition: all cubic-bezier(.97,-0.38,.32,1.03) 1s;
+    transform: translateX(0px);
+}
+
+.block{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    padding-bottom: 50px;
+
+
+}
+
+.jokes{
+    width: 512px;
+    overflow: hidden;
+}
+
+.joke-slider{
+    display: flex;
+    width: 2560px;
+    transition: all cubic-bezier(0,.89,1,-0.03) 1s;
+    transform: translateX(0px);
+}
+
+
+.joke{
+    display: block;
+    width: 512px;
+
+
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.points{
+    display: flex;
+    align-items: center;
+
+}
+
+.point{
+    width: 25px;
+    height: 25px;
+    background-color: burlywood;
+    border-radius: 50%;
+    margin: -3px;
+    cursor: pointer;
+    transition: all linear 0.2s;
+    border: 8px solid rgb(245,245,220,1);
+}
+
+.point:hover{
+    background-color: rgb(110, 91, 66);
+}
+
+
+.activ{
+    background-color: darkgoldenrod;
+}
+
+
+@media screen and (max-width: 768px) {
+    .block{
+        display: flex;
+        margin: 50px auto;
+        padding-bottom: 50px;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .points{
+        margin-top: 50px;
+    }
+}

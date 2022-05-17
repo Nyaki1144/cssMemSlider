@@ -41,39 +41,39 @@ body{
     justify-content: space-between;
     margin: 50px auto;
     padding-bottom: 50px;
-
+    width: 100%;
 
 }
 
 .jokes{
-    width: 512px;
+    width: 65%;
     overflow: hidden;
+
 }
 
 .joke-slider{
     display: flex;
     width: 2560px;
-    transition: all cubic-bezier(0,.89,1,-0.03) 1s;
-    transform: translateX(0px);
 }
 
 
 .joke{
     display: block;
-    width: 512px;
-
-
+    width: 20%;
     font-size: 32px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: all cubic-bezier(0,.89,1,-0.03) 1s;
+
 }
 
-.points{
+.controls{
     display: flex;
     align-items: center;
-
+    width: 35%;
 }
 
-.point{
+label{
+    display: block;
     width: 25px;
     height: 25px;
     background-color: burlywood;
@@ -84,15 +84,69 @@ body{
     border: 8px solid rgb(245,245,220,1);
 }
 
-.point:hover{
-    background-color: rgb(110, 91, 66);
+label:hover{
+    background-color: rgb(118, 87, 8);
 }
 
+
+
+#slide1:checked ~ .wrapper .controls label:nth-of-type(1),
+#slide2:checked ~ .wrapper .controls label:nth-of-type(2),
+#slide3:checked ~ .wrapper .controls label:nth-of-type(3),
+#slide4:checked ~ .wrapper .controls label:nth-of-type(4),
+#slide5:checked ~ .wrapper .controls label:nth-of-type(5) {
+    background-color: darkgoldenrod;
+}
+
+
+
+#slide1:checked ~ .wrapper .slired-contaoner .sliders{
+    transform: translateX(0);
+}
+#slide2:checked ~ .wrapper .slired-contaoner .sliders{
+    transform: translateX(-20%);
+}
+#slide3:checked ~ .wrapper .slired-contaoner .sliders{
+    transform: translateX(-40%);
+}
+#slide4:checked ~ .wrapper .slired-contaoner .sliders{
+    transform: translateX(-60%);
+}
+#slide5:checked ~ .wrapper .slired-contaoner .sliders{
+    transform: translateX(-80%);
+}
+
+#slide1:checked ~ .wrapper .block .jokes .joke{
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .wrapper .block .jokes .joke{
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .wrapper .block .jokes .joke{
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .wrapper .block .jokes .joke{
+    transform: translateX(-300%);
+}
+
+#slide5:checked ~ .wrapper .block .jokes .joke{
+    transform: translateX(-400%);
+}
+
+.slider-img {
+    width: 20%;
+}
 
 .activ{
     background-color: darkgoldenrod;
 }
 
+input {
+	display: none;
+}
 
 @media screen and (max-width: 768px) {
     .block{
@@ -103,9 +157,20 @@ body{
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-
+        flex-direction: column;
     }
+    
     .points{
         margin-top: 50px;
+    }
+
+    .jokes {
+        width: 100%;
+        order: 1;
+        margin-top: 40px;
+    }
+
+    .joke {
+        text-align: center;
     }
 }
